@@ -150,7 +150,7 @@ function setupServer (worker) {
       console.log(req.body);
         config.postmark.sendEmail({
             "From": "dan@ddajohnson.com",
-            "To": "dan@ddajohnson.com",
+            "To": "bearded.baritones@gmail.com",
             "Reply-To": "req.body.email",
             "Subject": "Contact Request From Bearded Baritones Website: " + req.body.name + "<" + req.body.email + ">",
             "TextBody": req.body.message,
