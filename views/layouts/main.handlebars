@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,700' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Bearded Baritones">
+    <meta name="application-name" content="Bearded Baritones">
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>{{title}}</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    {{!-- If you dont want to use Pure, delete out the snippet below --}}
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <!--<![endif]-->
+    {{!--
+    If you want to use Bootstrap, uncomment the line below and delete the Pure CSS lines above.
+    {{addRemoteCSS "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"}}
+    --}}
+
+
+    {{addLocalCSS "/css/app.css"}}
+    {{addRemoteCSS "http://fonts.googleapis.com/css?family=Oswald:400,300,700"}}
+
+    {{#localCSS}}
+      {{#if this.oldIE}}
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="{{{this.oldIE}}}">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="{{{this.path}}}">
+        <!--<![endif]-->
+      {{else}}
+        <link rel="stylesheet" href="{{{this.path}}}">
+      {{/if}}
+    {{/localCSS}}
+
+
+<body lang="en">
+
+<div id="layout">
+
+    {{> sidemenu}}
+
+    <div id="main">
+        <div class="header">
+          <img class="pure-img-responsive"  src="/img/BaritonesLogo900w.png" alt="Bearded Baritones">
+        </div>
+
+
+        <div class="content">
+
+        <ul class="share-buttons">
+          <li><a href="https://www.facebook.com/BeardedBaritones" title="Find us on Facebook" alt="Facebook" target="_blank"><img src="img/Facebook.png"></a></li>
+          <li><a href="https://twitter.com/beardedbaris" target="_blank" title="Find us on Twitter" alt="Twitter"><img src="img/Twitter.png"></a></li>
+          <li><a href="https://plus.google.com/u/1/b/103864830930560931979/103864830930560931979/about" target="_blank" title="Find us on Google+"><img src="img/Google+.png"></a></li>
+        </ul>
+
+            {{{body}}}
+        </div>
+    </div>
+</div>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    {{!-- Uncomment the line below if you want to use Bootstrap's JS modules --}}
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+    {{addLocalJS "/js/ui.js"}}
+
+    {{#localJS}}
+        <script src="{{{.}}}"></script>
+    {{/localJS}}
+</body>
+
+</html>

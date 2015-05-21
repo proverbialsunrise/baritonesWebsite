@@ -1,0 +1,77 @@
+<div class="content-subhead">
+  <h1>Contact Us</h1>
+</div>
+
+<p>
+Want us to sing at your event?  Need to ask a burning question about barbershop harmony? Just want to chat?  Send us a message.
+</p>
+
+<form id="contactform" class="pure-form pure-form-stacked" action="/contact" method="post">
+    <fieldset>
+        <input type="hidden" name="_csrf" value="{{_csrf}}">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Email" required>
+
+        <label for="message">Message</label>
+        <textarea class="message" id="message" name="message" type="text" placeholder="Type your message here..." required></textarea>
+    </fieldset>
+    <button id="submit" type="submit" class="pure-button pure-button-primary button-submit">Send Message</button>
+</form>
+
+<div id="successMessage" class="onSubmit">
+   <p>
+     Your message was sent successfully.  We'll get back to you soon.
+   </p>
+</div>
+<div id="failedMessage" class="onSubmit">
+  <p>
+    Something went wrong with your submission.  Refresh and try again!
+  </p>
+</div>
+
+
+
+<script type='text/javascript'>
+    /* attach a submit handler to the form */
+    $("#contactform").submit(function(event) {
+
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+       $("input[type=submit]").attr("disabled", "disabled");
+
+      /* get some values from elements on the page: */
+      var $form = $( this ),
+          url = $form.attr( 'action' );
+
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#contactform").serialize(), // serializes the form's elements.
+           success: function(data) {
+               console.log(data);
+               console.log('process sucess');
+               $("#successMessage").show();
+               $form.hide();
+
+           },
+           error: function() {
+               console.log('process error');
+               $("#failedMessage").show();
+               $form.hide();
+           }
+           });
+    });
+
+
+    $(document).ready(function(event) {
+        $("#successMessage").hide();
+        $("#failedMessage").hide();
+    });
+</script>
+
+
+

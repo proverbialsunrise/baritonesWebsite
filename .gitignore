@@ -2,6 +2,9 @@
 logs
 *.log
 
+#configc
+config
+
 # Runtime data
 pids
 *.pid
