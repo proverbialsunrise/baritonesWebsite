@@ -13,7 +13,7 @@ routes       = require('./routes'),
 middleware   = require('./middleware'),
 config       = require('./config'),
 utils        = require('./lib/utils'),
-port         = (process.env.PORT || 8000);
+port         = (process.env.PORT || 80);
 
 
 //Comment out the line below if you want to enable cluster support.
@@ -79,7 +79,6 @@ function setupServer (worker) {
     app.use(compression()); 
 
     // Specify the public directory.
-    console.log(config.dirs.pub)
     app.use(express.static(config.dirs.pub));
 
     app.use(csrf({cookie: true}));
@@ -133,7 +132,6 @@ function setupServer (worker) {
     router.get('/photos', function (req, res) {
       utils.getImagesForPhotosPage(function(images, err) {
             res.locals.photos=images;
-            console.log(res.locals.photos);
             res.locals.title = "Photos | Bearded Baritones";
             res.render('photos')
       });
