@@ -13,7 +13,8 @@ routes       = require('./routes'),
 middleware   = require('./middleware'),
 config       = require('./config'),
 utils        = require('./lib/utils'),
-port         = (process.env.PORT || 80);
+getEvents    = require('./lib/getEvents'),
+port         = (process.env.PORT || 8000);
 
 
 //Comment out the line below if you want to enable cluster support.
@@ -111,35 +112,52 @@ function setupServer (worker) {
     // available to the client.
     router.get('/', function (req, res) {
       res.locals.title = "Bearded Baritones";
-      res.render('home')
+      res.render('home');
     });
 
     router.get('/about', function (req, res) {
       res.locals.title = "About | Bearded Baritones";
-      res.render('about')
+      res.render('about');
     });
 
     router.get('/videos', function (req, res) {
       res.locals.title = "Videos | Bearded Baritones";
-      res.render('videos')
+      res.render('videos');
     });
 
     router.get('/appearances', function (req, res) {
       res.locals.title = "Appearances | Bearded Baritones";
-      res.render('appearances')
+      getEvents.getEvents('data' + '/appearances.xml', function (events, err) {
+        if (!err) {
+          res.locals.events = events;
+          res.render('appearances');
+        } else {
+          res.render('500', {
+            status: err.status || 500,
+            error: err
+          });
+        }
+      });
     });
 
     router.get('/photos', function (req, res) {
       utils.getImagesForPhotosPage(function(images, err) {
+          if (!err) {
             res.locals.photos=images;
             res.locals.title = "Photos | Bearded Baritones";
-            res.render('photos')
+            res.render('photos');
+          } else {
+            res.render('500', {
+              status: err.status || 500,
+              error: err
+            });
+          }
       });
     });
 
     router.get('/contact', function (req, res) {
       res.locals.title = "Contact | Bearded Baritones";
-      res.render('contact')
+      res.render('contact');
     });
 
 
@@ -159,7 +177,7 @@ function setupServer (worker) {
                 return;
             }
             res.status(200).send();
-            console.info("Sent to postmark for delivery")
+            console.info("Sent to postmark for delivery");
         });
 
 
