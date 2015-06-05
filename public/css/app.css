@@ -3,7 +3,7 @@ body {
     background-color:#eeeeee;
     font-size:16pt;
     font-weight:300;
-    font-color:#444;
+    color:#444;
 }
 
 a {
@@ -103,7 +103,7 @@ ul.share-buttons li{
 
 
 .about-baritone p {
-  text-size:13pt;
+  font-size:13pt;
   }
 
 .event {
