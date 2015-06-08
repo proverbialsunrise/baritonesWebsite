@@ -116,6 +116,33 @@ ul.share-buttons li{
     padding-bottom:1em;
 }
 
+/*Styling for arrangements page*/
+
+.arrangement-text {
+    border-bottom-style: solid;
+    border-width:1px;
+    border-color:#ddd;
+    padding-bottom:1em;
+}
+
+.arrangement-img {
+    height:300px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.arrangement-details {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-bottom-style: solid;
+    border-width:1px;
+    border-color:#ddd;
+    padding-bottom:1em;
+}
+
+
+
 .header {
      margin: 0;
      color: #333;
