@@ -1,0 +1,26 @@
+<div class="content-subhead">
+  <h1>Arrangements</h1>
+</div>
+
+<div>
+  <p>
+    Here's a list of the arrangments we've done for ourselves along with downloadable PDFs and MIDI files.  If you're interested in singing any of these arrangements, go ahead! Please <a href="/contact">let us know</a> if you do.  We'd love to hear where our music is being sung.
+  </p>
+</div>
+
+{{#each arrangements}}
+<div class="arrangement-details pure-g">
+    <div class="arrangment-text pure-u-1 pure-u-md-1-2">
+      <h2>{{title}}</h2>
+      <p>
+      Arranger:{{arranger}}
+      </p>
+      <p>
+      Date:{{date}}
+      </p>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-2">
+        <img class="arrangement-img pure-img-responsive" src={{thumbnail}} alt={{title}}>
+    </div>
+</div>
+{{/each}}

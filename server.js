@@ -14,6 +14,7 @@ middleware   = require('./middleware'),
 config       = require('./config'),
 utils        = require('./lib/utils'),
 getEvents    = require('./lib/getEvents'),
+getArrangements = require('./lib/getArrangements'),
 port         = (process.env.PORT || 8000);
 
 
@@ -61,10 +62,10 @@ function setupServer (worker) {
     });
 
     // Parse application/x-www-form-urlencoded
-    app.use(bodyParser.urlencoded({ extended: false }))
+    app.use(bodyParser.urlencoded({ extended: false }));
 
     // Parse application/json
-    app.use(bodyParser.json())
+    app.use(bodyParser.json());
 
     // Parse cookies.
     app.use(cookieParser());
@@ -91,7 +92,7 @@ function setupServer (worker) {
     });
 
     app.use(function (err, req, res, next) {
-    if (err.code !== 'EBADCSRFTOKEN') return next(err)
+    if (err.code !== 'EBADCSRFTOKEN') return next(err);
       console.log(err.code);
       // handle CSRF token errors here
       res.status(403);
@@ -124,6 +125,22 @@ function setupServer (worker) {
       res.locals.title = "Videos | Bearded Baritones";
       res.render('videos');
     });
+
+    router.get('/arrangements', function (req, res) {
+      res.locals.title = "Arrangements | Bearded Baritones";
+      getArrangements.getArrangements('data/arrangements.json', function (arrangements,err) {
+        if (!err) {
+          res.locals.arrangements = arrangements;
+          res.render('arrangements');
+        } else {
+          res.render('500', {
+            status: err.status || 500,
+            error: err
+          });
+        }
+      });
+    });
+
 
     router.get('/appearances', function (req, res) {
       res.locals.title = "Appearances | Bearded Baritones";
