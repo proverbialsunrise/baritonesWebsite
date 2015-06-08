@@ -30,7 +30,7 @@ build/Release
 node_modules
 
 # Data directory
-data
+data/appearances.xml
 
 # Mac directory
 .DS_Store
