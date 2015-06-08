@@ -15,6 +15,7 @@ config       = require('./config'),
 utils        = require('./lib/utils'),
 getEvents    = require('./lib/getEvents'),
 getArrangements = require('./lib/getArrangements'),
+getRepertoire = require('./lib/getRepertoire'),
 port         = (process.env.PORT || 8000);
 
 
@@ -140,6 +141,20 @@ function setupServer (worker) {
       });
     });
 
+   router.get('/repertoire', function (req, res) {
+      res.locals.title = "Arrangements | Bearded Baritones";
+      getRepertoire.getRepertoire('data/repertoire.json', function (songs, err) {
+        if (!err) {
+          res.locals.songs = songs;
+          res.render('repertoire');
+        } else {
+          res.render('500', {
+            status: err.status || 500,
+            error: err
+          });
+        }
+      });
+    });
 
     router.get('/appearances', function (req, res) {
       res.locals.title = "Appearances | Bearded Baritones";
@@ -155,6 +170,7 @@ function setupServer (worker) {
         }
       });
     });
+
 
     router.get('/photos', function (req, res) {
       utils.getImagesForPhotosPage(function(images, err) {
