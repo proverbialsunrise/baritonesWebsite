@@ -1,0 +1,58 @@
+[
+	{
+		"title":"Octopus' Garden",
+		"arranger":"Doug Epp",
+		"dateStr":"2013-07-01T12:00:00+00:00",
+		"filename":"OctopusGarden.pdf",
+		"thumbnail":"OctopusGarden.png",
+		"note":"As popularized by The Beatles."
+	},
+	{
+		"title":"The Night is Young",
+		"arranger":"Jake Redekopp",
+		"dateStr":"2013-02-01T12:00:00+00:00",
+		"filename":"TheNightIsYoung.pdf",
+		"thumbnail":"TheNightIsYoung.png",
+		"note":"From Robin Hood: Men in Tights"
+	},
+	{
+		"title":"Since You've Been Gone",
+		"arranger":"Jake Redekopp",
+		"dateStr":"2014-04-01T12:00:00+00:00",
+		"filename":"SinceYouveBeenGone.pdf",
+		"thumbnail":"SinceYouveBeenGone.png",
+		"note":"As sung by Weird Al Yankovic"
+	},
+	{
+		"title":"It Wasn't Me",
+		"arranger":"Jake Redekopp",
+		"dateStr":"2013-07-01T12:00:00+00:00",
+		"filename":"ItWasntMe.pdf",
+		"thumbnail":"ItWasntMe.png",
+		"note":"Originally by Shaggy. But our version was sung by The Ragtime Gals."
+	},
+	{
+		"title":"The Elements",
+		"arranger":"Jake Redekopp",
+		"dateStr":"2012-12-01T12:00:00+00:00",
+		"filename":"Elements.pdf",
+		"thumbnail":"Elements.png",
+		"note":"Original by Tom Lehrer"
+	},
+	{
+		"title":"Friends",
+		"arranger":"Doug Epp",
+		"dateStr":"2011-07-01T12:00:00+00:00",
+		"filename":"Friends.pdf",
+		"thumbnail":"Friends.png",
+		"note":"By Flight of the Conchords"
+	},
+	{
+		"title":"My Enormous Penis",
+		"arranger":"Jake Redekopp",
+		"dateStr":"2012-04-01T12:00:00+00:00",
+		"filename":"MyEnormousPenis.pdf",
+		"thumbnail":"MyEnormousPenis.png",
+		"note":"Originally sung by DaVinci's Notebook"
+	}
+]
