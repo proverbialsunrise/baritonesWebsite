@@ -41,7 +41,6 @@ function setupServer (worker) {
     //Uncomment this if you want strict routing (ie: /foo will not resolve to /foo/)
     //app.enable('strict routing');
 
-    //Change "App" to whatever your application's name is, or leave it like this.
     app.set('state namespace', 'BBs');
 
     //Create an empty Data object and expose it to the client. This
@@ -196,9 +195,7 @@ function setupServer (worker) {
             res.status(200).send();
             console.info("Sent to postmark for delivery");
         });
-
-
-});
+    });
 
 
     // Error handling middleware
