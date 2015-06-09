@@ -16,7 +16,7 @@ utils        = require('./lib/utils'),
 getEvents    = require('./lib/getEvents'),
 getArrangements = require('./lib/getArrangements'),
 getRepertoire = require('./lib/getRepertoire'),
-port         = (process.env.PORT || 8000);
+port         = (process.env.BariPORT || 4952);
 
 
 //Comment out the line below if you want to enable cluster support.
