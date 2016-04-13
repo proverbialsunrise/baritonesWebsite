@@ -192,28 +192,6 @@ function setupServer (worker) {
       res.render('contact');
     });
 
-
-    router.post('/contact', function(req, res) {
-      //Setup the email
-      console.log(req.body);
-        config.postmark.sendEmail({
-            "From": "dan@ddajohnson.com",
-            "To": "bearded.baritones@gmail.com",
-            "Reply-To": "req.body.email",
-            "Subject": "Contact Request From Bearded Baritones Website: " + req.body.name + "<" + req.body.email + ">",
-            "TextBody": req.body.message,
-        }, function(error, success) {
-            if(error) {
-                console.error("Unable to send via postmark: " + error.message);
-                res.status(400).send(error.message);
-                return;
-            }
-            res.status(200).send();
-            console.info("Sent to postmark for delivery");
-        });
-    });
-
-
     // Error handling middleware
     app.use(function(req, res, next){
         res.render('404', { status: 404, url: req.url });
