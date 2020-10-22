@@ -15,7 +15,7 @@
 		"arranger": ""
 	},
 	{
-		"title": "Wait Till the Sun Shines Nellie",
+		"title": "Wait 'Til the Sun Shines Nellie",
 		"arranger": "Warren 'Buzz' Haeger"
 	},
 	{
@@ -34,7 +34,8 @@
 		"title": "Wedding Bells are Breaking Up that Old Gang of Mine"
 	},
 	{
-		"title": "Poisoning Pigeons in the Park"
+		"title": "Poisoning Pigeons in the Park",
+    "arranger": "Tom Lehrer"
 	},
 	{
 		"title": "Sincere",
@@ -81,15 +82,8 @@
 		"arranger": "Vocal Spectrum"
 	},
 	{
-		"title": "If the Lord be Willing"
-	},
-	{
 		"title": "God Only Knows",
 		"arranger": "Clay Hine"
-	},
-	{
-		"title": "Kiss The Girl",
-		"arranger": " Kirby Shaw"
 	},
 	{
 		"title": "God Bless the USA"
@@ -103,11 +97,6 @@
 		"arranger": " Jake Redekopp"
 	},
 	{
-		"title": "Octopus' Garden",
-		"arranger": "Doug Epp",
-		"recording": "OctopusGarden.mp3"
-	},
-	{
 		"title": "The Night is Young",
 		"arranger": "Jake Redekopp",
 		"recording": "TheNightIsYoung.mp3"
@@ -115,7 +104,7 @@
 	{
 		"title": "Since You've Been Gone",
 		"arranger": "Jake Redekopp",
-		"recording": "SinceYouveBeenGone.mpe"
+		"recording": "SinceYouveBeenGone.mp3"
 	},
 	{
 		"title": "It Wasn't Me",
@@ -133,7 +122,33 @@
 		"recording": "Friends.mp3"
 	},
 	{
-		"title": "My Enormous Penis",
-		"arranger": "Jake Redekopp"
+		"title": "Puy Your Arms Around Me"
+	},
+	{
+		"title": "Stars Fell on Alabama"
+	},
+	{
+		"title": "Drivin' Me Crazy"
+	},
+	{
+		"title": "My Baby Loves a Bunch of Authors"
+	},
+	{
+		"title": "Go the Distance"
+	},
+	{
+		"title": "Rubber Duckie"
+	},
+	{
+		"title": "Blue Skies"
+	},
+	{
+		"title": "I'm Beginning to See the Light"
+	},
+	{
+		"title": "Goodbye My Coney Island Baby"
+	},
+	{
+		"title": "I'm a Believer"
 	}
 ]
