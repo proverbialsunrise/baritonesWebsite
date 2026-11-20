@@ -2,7 +2,9 @@
   <h1>500: Internal Server Error</h1>
 </div>
 
-<p>The server encountered an internal error while trying to process the request. Here are the error details:</p>
-<p>
-    {{{error}}}
-</p>
+<p>The server encountered an internal error while trying to process the request.</p>
+{{#if error}}
+<p>{{error}}</p>
+{{else}}
+<p>Please try again later.</p>
+{{/if}}

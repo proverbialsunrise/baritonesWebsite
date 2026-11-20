@@ -1,0 +1,12 @@
+# Optional Caddy configuration if consolidating multiple Docker services behind
+# a single Caddy container instead of host Nginx + Certbot.
+# Assumes Caddy and the `web` service share a Docker network.
+
+www.beardedbaritones.com {
+    redir https://beardedbaritones.com{uri} permanent
+}
+
+beardedbaritones.com {
+    encode zstd gzip
+    reverse_proxy web:4952
+}

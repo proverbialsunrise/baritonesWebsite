@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    container_name: bearded-baritones-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${PORT:-4952}:4952"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 4952
+      CALENDAR_ID: ${CALENDAR_ID:-bearded.baritones@gmail.com}
+      TIMEZONE: ${TIMEZONE:-America/Toronto}
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
