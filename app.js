@@ -35,7 +35,7 @@ export function createApp({
           fontSrc: ["'self'", 'https://fonts.gstatic.com'],
           imgSrc: ["'self'", 'data:'],
           frameSrc: ['https://www.youtube.com', 'https://www.youtube-nocookie.com'],
-          upgradeInsecureRequests: isProduction ? [] : null,
+          upgradeInsecureRequests: null,
         },
       },
     }),

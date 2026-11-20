@@ -257,6 +257,7 @@ describe('HTTP routes and security headers', () => {
       assert.equal(res.headers.get('referrer-policy'), 'strict-origin-when-cross-origin');
       const csp = res.headers.get('content-security-policy');
       assert.ok(csp?.includes('https://www.youtube.com'));
+      assert.ok(!csp?.includes('upgrade-insecure-requests'));
     }
   });
 
