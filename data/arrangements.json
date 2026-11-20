@@ -4,7 +4,7 @@
 		"arranger":"Doug Epp",
 		"dateStr":"2013-07-01T12:00:00+00:00",
 		"filename":"OctopusGarden.pdf",
-		"thumbnail":"OctopusGarden.png",
+		"thumbnail":"OctopusGarden.webp",
 		"note":"As popularized by The Beatles."
 	},
 	{
@@ -12,7 +12,7 @@
 		"arranger":"Jake Redekopp",
 		"dateStr":"2013-02-01T12:00:00+00:00",
 		"filename":"TheNightIsYoung.pdf",
-		"thumbnail":"TheNightIsYoung.png",
+		"thumbnail":"TheNightIsYoung.webp",
 		"note":"From Robin Hood: Men in Tights"
 	},
 	{
@@ -20,7 +20,7 @@
 		"arranger":"Jake Redekopp",
 		"dateStr":"2014-04-01T12:00:00+00:00",
 		"filename":"SinceYouveBeenGone.pdf",
-		"thumbnail":"SinceYouveBeenGone.png",
+		"thumbnail":"SinceYouveBeenGone.webp",
 		"note":"As sung by Weird Al Yankovic"
 	},
 	{
@@ -28,7 +28,7 @@
 		"arranger":"Jake Redekopp",
 		"dateStr":"2013-07-01T12:00:00+00:00",
 		"filename":"ItWasntMe.pdf",
-		"thumbnail":"ItWasntMe.png",
+		"thumbnail":"ItWasntMe.webp",
 		"note":"Originally by Shaggy. But our version was sung by The Ragtime Gals."
 	},
 	{
@@ -36,7 +36,7 @@
 		"arranger":"Jake Redekopp",
 		"dateStr":"2012-12-01T12:00:00+00:00",
 		"filename":"Elements.pdf",
-		"thumbnail":"Elements.png",
+		"thumbnail":"Elements.webp",
 		"note":"Original by Tom Lehrer"
 	},
 	{
@@ -44,7 +44,7 @@
 		"arranger":"Doug Epp",
 		"dateStr":"2011-07-01T12:00:00+00:00",
 		"filename":"Friends.pdf",
-		"thumbnail":"Friends.png",
+		"thumbnail":"Friends.webp",
 		"note":"By Flight of the Conchords"
 	},
 	{
@@ -52,7 +52,7 @@
 		"arranger":"Jake Redekopp",
 		"dateStr":"2012-04-01T12:00:00+00:00",
 		"filename":"MyEnormousPenis.pdf",
-		"thumbnail":"MyEnormousPenis.png",
+		"thumbnail":"MyEnormousPenis.webp",
 		"note":"Originally sung by DaVinci's Notebook"
 	}
 ]

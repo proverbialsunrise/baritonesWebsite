@@ -36,11 +36,11 @@ describe('data loaders', () => {
     assert.equal(formatArrangementDate('not-a-date'), '');
   });
 
-  it('lists performance jpg photos sorted alphabetically with leading slash', async () => {
+  it('lists performance photos sorted alphabetically with leading slash', async () => {
     const photos = await getImagesForPhotosPage();
     assert.ok(photos.length > 0);
     for (const photo of photos) {
-      assert.match(photo.filename, /^\/img\/perform\/.+\.jpe?g$/i);
+      assert.match(photo.filename, /^\/img\/perform\/.+\.(?:jpe?g|png|webp)$/i);
     }
     const names = photos.map((p) => p.filename);
     const sorted = [...names].sort((a, b) => a.localeCompare(b));
@@ -264,7 +264,7 @@ describe('HTTP routes and security headers', () => {
   it('fixes minor HTML bugs on /about, /photos, /appearances, and /contact', async () => {
     const aboutHtml = await (await fetch(`${baseUrl}/about`)).text();
     assert.ok(!aboutHtml.includes('src="img/'));
-    assert.ok(aboutHtml.includes('src="/img/josh.jpg" alt="Photo of Josh"'));
+    assert.ok(aboutHtml.includes('src="/img/josh.webp" alt="Photo of Josh"'));
 
     const photosHtml = await (await fetch(`${baseUrl}/photos`)).text();
     assert.ok(photosHtml.includes('src="/img/perform/'));
@@ -277,7 +277,7 @@ describe('HTTP routes and security headers', () => {
     assert.ok(contactHtml.includes('href="mailto:bearded.baritones@gmail.com"'));
   });
 
-  it('serves local PureCSS, app CSS, and JS assets', async () => {
+  it('serves local PureCSS, app CSS, JS, and optimized WebP image assets', async () => {
     for (const asset of [
       '/vendor/purecss/pure-min.css',
       '/vendor/purecss/grids-responsive-min.css',
@@ -287,6 +287,10 @@ describe('HTTP routes and security headers', () => {
       const res = await fetch(`${baseUrl}${asset}`);
       assert.equal(res.status, 200, `Expected 200 for ${asset}`);
     }
+
+    const imgRes = await fetch(`${baseUrl}/img/perform/DanAlina1.webp`);
+    assert.equal(imgRes.status, 200);
+    assert.match(imgRes.headers.get('content-type') ?? '', /image\/webp/);
   });
 
   it('returns real 404 status for unknown routes', async () => {
