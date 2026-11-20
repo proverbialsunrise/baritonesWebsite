@@ -35,10 +35,24 @@ npm test
 
 The container binds only to `127.0.0.1:4952` so it is never exposed directly to the internet; host Nginx terminates TLS with Let's Encrypt and proxies traffic to it.
 
+### 0. Provision a new Ubuntu Droplet
+
+From your local machine, copy [deploy/setup-droplet.sh](deploy/setup-droplet.sh) to the fresh Ubuntu LTS droplet and run it once as `root`:
+
+```bash
+scp deploy/setup-droplet.sh root@<droplet-ip>:/root/
+ssh root@<droplet-ip> "bash /root/setup-droplet.sh && rm -f /root/setup-droplet.sh"
+```
+
+This updates the OS, enables unattended security upgrades and `fail2ban`, adds a `1G` swapfile, installs Docker + Compose, installs Nginx + Certbot, creates a non-root `deploy` user (with `sudo` and `docker` group access and your SSH key) owning `/opt/apps`, disables root/password SSH login, and enables the `ufw` firewall (`OpenSSH` + `Nginx Full`).
+
+**Test `ssh deploy@<droplet-ip>` in a second terminal before closing your root session**, then continue the steps below as `deploy`.
+
 ### 1. Start the container on the droplet
 
 ```bash
-git clone <your-repo-url> baritonesWebsite
+cd /opt/apps
+git clone https://github.com/proverbialsunrise/baritonesWebsite.git
 cd baritonesWebsite
 docker compose up -d --build
 ```
